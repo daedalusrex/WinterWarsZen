@@ -29,7 +29,10 @@ Player_View::~Player_View()
 
 void Player_View::set_camera(const Point2f &topLeft, const Point2f &bottomRight)
 {
-	get_Video().set_3d_view(player->get_camera(), std::make_pair(topLeft, bottomRight));
+	const Point2i topL(topLeft);
+	const Point2i botR(bottomRight);
+	//get_Video().set_3d_view(player->get_camera(), std::make_pair(topLeft, bottomRight));
+	get_Video().set_3d_view(player->get_camera(), std::make_pair(topL, botR));
 }
 
 void Player_View::render_hud(const Point2f &topLeft, const Point2f &bottomRight)
